@@ -46,4 +46,7 @@ fn main() {
             process::exit(0);
         }
     }
+
+    println!("Invalid hash");
+    process::exit(0);
 }
