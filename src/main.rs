@@ -5,6 +5,7 @@ use std::{env, fs, process};
 #[derive(Debug, Deserialize)]
 struct HashInfo {
     name: String,
+    hashcat: Option<u32>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -40,7 +41,13 @@ fn main() {
 
         if re.is_match(hash) {
             for hash_info in prototype.modes.iter() {
-                println!("{}", hash_info.name);
+                print!("{}", hash_info.name);
+
+                if hash_info.hashcat.is_some() {
+                    println!(" | {}", hash_info.hashcat.unwrap());
+                } else {
+                    print!("\n");
+                }
             }
 
             process::exit(0);

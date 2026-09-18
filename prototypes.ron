@@ -4,6 +4,7 @@
         modes: [
             (
                 name: "Argon2id",
+				hashcat: Some(34000),
             )
         ]
     ),
@@ -12,6 +13,7 @@
         modes: [
             (
                 name: "Bcrypt",
+				hashcat: Some(3200),
             )
         ]
     ),
@@ -20,6 +22,7 @@
         modes: [
             (
                 name: "Argon2i",
+				hashcat: Some(34000),
             )
         ]
     ),
@@ -28,6 +31,7 @@
         modes: [
             (
                 name: "SHA-512 Crypt",
+				hashcat: Some(1800),
             )
         ]
     ),
@@ -36,6 +40,7 @@
         modes: [
             (
                 name: "SHA-256 Crypt",
+				hashcat: Some(7400),
             )
         ]
     ),
@@ -44,27 +49,35 @@
         modes: [
             (
                 name: "MD5",
+				hashcat: Some(0),
             ),
             (
                 name: "NTLM",
+				hashcat: Some(1000),
             ),
             (
                 name: "MD4",
+				hashcat: Some(900),
             ),
             (
                 name: "LM",
+				hashcat: Some(3000),
             ),
             (
                 name: "RIPEMD-128",
+				hashcat: None,
             ),
             (
                 name: "BLAKE2b-128",
+				hashcat: None,
             ),
             (
                 name: "BLAKE2s-128",
+				hashcat: None,
             ),
             (
                 name: "MD2",
+				hashcat: None,
             )
         ]
     ),
@@ -73,6 +86,7 @@
         modes: [
             (
                 name: "MD5 Crypt",
+				hashcat: Some(500),
             )
         ]
     ),
@@ -81,15 +95,19 @@
         modes: [
             (
                 name: "SHA-1",
+				hashcat: Some(100),
             ),
             (
                 name: "RIPEMD-160",
+				hashcat: Some(6000),
             ),
             (
                 name: "BLAKE2b-160",
+				hashcat: None,
             ),
             (
                 name: "BLAKE2s-160",
+				hashcat: None,
             )
         ]
     ),
@@ -98,21 +116,27 @@
         modes: [
             (
                 name: "SHA-256",
+				hashcat: Some(1400),
             ),
             (
                 name: "BLAKE2b-256",
+				hashcat: None,
             ),
             (
                 name: "BLAKE2s-256",
+				hashcat: None,
             ),
             (
                 name: "SHA3-256",
+				hashcat: Some(17400),
             ),
             (
                 name: "RIPEMD-256",
+				hashcat: None,
             ),
             (
                 name: "Streebog-256",
+				hashcat: Some(11700),
             )
         ]
     ),
@@ -121,9 +145,11 @@
         modes: [
             (
                 name: "SHA-224",
+				hashcat: Some(1300),
             ),
             (
                 name: "SHA3-224",
+				hashcat: Some(17300),
             )
         ]
     ),
@@ -132,12 +158,15 @@
         modes: [
             (
                 name: "SHA-384",
+				hashcat: Some(10800),
             ),
             (
                 name: "SHA3-384",
+				hashcat: Some(17500),
             ),
             (
                 name: "BLAKE2b-384",
+				hashcat: None,
             )
         ]
     ),
@@ -146,21 +175,27 @@
         modes: [
             (
                 name: "SHA-512",
+				hashcat: Some(1700),
             ),
             (
                 name: "BLAKE2b-512",
+				hashcat: None,
             ),
             (
                 name: "SHA3-512",
+				hashcat: Some(17600),
             ),
             (
                 name: "Whirlpool",
+				hashcat: Some(6100),
             ),
             (
                 name: "Streebog-512",
+				hashcat: Some(11800),
             ),
             (
                 name: "MD6",
+				hashcat: Some(34600),
             )
         ]
     ),
@@ -169,6 +204,7 @@
         modes: [
             (
                 name: "DES Crypt",
+				hashcat: Some(1500),
             )
         ]
     ),
@@ -177,6 +213,7 @@
         modes: [
             (
                 name: "Argon2d",
+				hashcat: Some(34000),
             )
         ]
     ),
@@ -185,6 +222,7 @@
         modes: [
             (
                 name: "RIPEMD-320",
+				hashcat: Some(33600),
             )
         ]
     ),
@@ -193,6 +231,7 @@
     modes: [
         (
             name: "Fletcher-64",
+			hashcat: None,
         )
     ]
 	),
@@ -201,9 +240,11 @@
         modes: [
             (
                 name: "Adler-32",
+				hashcat: None,
             ),
             (
                 name: "Fletcher-32",
+				hashcat: None,
             )
         ]
     )
