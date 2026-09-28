@@ -1,3 +1,4 @@
+use comfy_table::{CellAlignment, Table};
 use regex::Regex;
 use serde::Deserialize;
 use std::{env, fs, process};
@@ -34,6 +35,15 @@ fn main() {
         process::exit(1);
     };
 
+    println!("\n\x1b[4mAnalyzing `{}`\x1b[0m\n", hash);
+
+    let mut table = Table::new();
+    table.set_header(vec!["Hash Name", "Hashcat Mode"]);
+    table
+        .column_mut(1)
+        .unwrap()
+        .set_cell_alignment(CellAlignment::Right);
+
     for prototype in prototypes.iter() {
         let Ok(re) = Regex::new(&prototype.regex) else {
             continue;
@@ -41,15 +51,16 @@ fn main() {
 
         if re.is_match(hash) {
             for hash_info in prototype.modes.iter() {
-                print!("{}", hash_info.name);
-
-                if hash_info.hashcat.is_some() {
-                    println!(" | {}", hash_info.hashcat.unwrap());
-                } else {
-                    print!("\n");
-                }
+                table.add_row(vec![
+                    &hash_info.name,
+                    &hash_info
+                        .hashcat
+                        .map(|m| m.to_string())
+                        .unwrap_or_else(|| "None".to_string()),
+                ]);
             }
 
+            println!("{}", table);
             process::exit(0);
         }
     }
