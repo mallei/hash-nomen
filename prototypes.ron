@@ -1,0 +1,251 @@
+[
+    (
+        regex: r#"^\$argon2id\$v=19\$m=[1-9]\d*,t=[1-9]\d*,p=[1-9]\d*\$[A-Za-z0-9+/]{11,}\$[A-Za-z0-9+/]{6,}$"#,
+        modes: [
+            (
+                name: "Argon2id",
+				hashcat: Some(34000),
+            )
+        ]
+    ),
+    (
+        regex: r#"^\$2[abyx]\$(?:0[4-9]|[12][0-9]|3[01])\$[A-Za-z0-9./]{53}$"#,
+        modes: [
+            (
+                name: "Bcrypt",
+				hashcat: Some(3200),
+            )
+        ]
+    ),
+    (
+        regex: r#"^\$argon2i\$v=19\$m=[1-9]\d*,t=[1-9]\d*,p=[1-9]\d*\$[A-Za-z0-9+/]{11,}\$[A-Za-z0-9+/]{6,}$"#,
+        modes: [
+            (
+                name: "Argon2i",
+				hashcat: Some(34000),
+            )
+        ]
+    ),
+    (
+        regex: r#"^\$6\$(?:rounds=(?:[1-9]\d{3,8})\$)?[A-Za-z0-9./]{1,16}\$[A-Za-z0-9./]{86}$"#,
+        modes: [
+            (
+                name: "SHA-512 Crypt",
+				hashcat: Some(1800),
+            )
+        ]
+    ),
+    (
+        regex: r#"^\$5\$(?:rounds=(?:[1-9]\d{3,8})\$)?[A-Za-z0-9./]{1,16}\$[A-Za-z0-9./]{43}$"#,
+        modes: [
+            (
+                name: "SHA-256 Crypt",
+				hashcat: Some(7400),
+            )
+        ]
+    ),
+    (
+        regex: r#"^[0-9a-fA-F]{32}$"#,
+        modes: [
+            (
+                name: "MD5",
+				hashcat: Some(0),
+            ),
+            (
+                name: "NTLM",
+				hashcat: Some(1000),
+            ),
+            (
+                name: "MD4",
+				hashcat: Some(900),
+            ),
+            (
+                name: "LM",
+				hashcat: Some(3000),
+            ),
+            (
+                name: "RIPEMD-128",
+				hashcat: None,
+            ),
+            (
+                name: "BLAKE2b-128",
+				hashcat: None,
+            ),
+            (
+                name: "BLAKE2s-128",
+				hashcat: None,
+            ),
+            (
+                name: "MD2",
+				hashcat: None,
+            )
+        ]
+    ),
+    (
+        regex: r#"^\$1\$[A-Za-z0-9./]{1,8}\$[A-Za-z0-9./]{22}$"#,
+        modes: [
+            (
+                name: "MD5 Crypt",
+				hashcat: Some(500),
+            )
+        ]
+    ),
+    (
+        regex: r#"^[0-9a-fA-F]{40}$"#,
+        modes: [
+            (
+                name: "SHA-1",
+				hashcat: Some(100),
+            ),
+            (
+                name: "RIPEMD-160",
+				hashcat: Some(6000),
+            ),
+            (
+                name: "BLAKE2b-160",
+				hashcat: None,
+            ),
+            (
+                name: "BLAKE2s-160",
+				hashcat: None,
+            )
+        ]
+    ),
+    (
+        regex: r#"^[0-9a-fA-F]{64}$"#,
+        modes: [
+            (
+                name: "SHA-256",
+				hashcat: Some(1400),
+            ),
+            (
+                name: "BLAKE2b-256",
+				hashcat: None,
+            ),
+            (
+                name: "BLAKE2s-256",
+				hashcat: None,
+            ),
+            (
+                name: "SHA3-256",
+				hashcat: Some(17400),
+            ),
+            (
+                name: "RIPEMD-256",
+				hashcat: None,
+            ),
+            (
+                name: "Streebog-256",
+				hashcat: Some(11700),
+            )
+        ]
+    ),
+    (
+        regex: r#"^[0-9a-fA-F]{56}$"#,
+        modes: [
+            (
+                name: "SHA-224",
+				hashcat: Some(1300),
+            ),
+            (
+                name: "SHA3-224",
+				hashcat: Some(17300),
+            )
+        ]
+    ),
+    (
+        regex: r#"^[0-9a-fA-F]{96}$"#,
+        modes: [
+            (
+                name: "SHA-384",
+				hashcat: Some(10800),
+            ),
+            (
+                name: "SHA3-384",
+				hashcat: Some(17500),
+            ),
+            (
+                name: "BLAKE2b-384",
+				hashcat: None,
+            )
+        ]
+    ),
+    (
+        regex: r#"^[0-9a-fA-F]{128}$"#,
+        modes: [
+            (
+                name: "SHA-512",
+				hashcat: Some(1700),
+            ),
+            (
+                name: "BLAKE2b-512",
+				hashcat: None,
+            ),
+            (
+                name: "SHA3-512",
+				hashcat: Some(17600),
+            ),
+            (
+                name: "Whirlpool",
+				hashcat: Some(6100),
+            ),
+            (
+                name: "Streebog-512",
+				hashcat: Some(11800),
+            ),
+            (
+                name: "MD6",
+				hashcat: Some(34600),
+            )
+        ]
+    ),
+    (
+        regex: r#"^[A-Za-z0-9./]{13}$"#,
+        modes: [
+            (
+                name: "DES Crypt",
+				hashcat: Some(1500),
+            )
+        ]
+    ),
+    (
+        regex: r#"^\$argon2d\$v=19\$m=[1-9]\d*,t=[1-9]\d*,p=[1-9]\d*\$[A-Za-z0-9+/]{11,}\$[A-Za-z0-9+/]{6,}$"#,
+        modes: [
+            (
+                name: "Argon2d",
+				hashcat: Some(34000),
+            )
+        ]
+    ),
+    (
+        regex: r#"^[0-9a-fA-F]{80}$"#,
+        modes: [
+            (
+                name: "RIPEMD-320",
+				hashcat: Some(33600),
+            )
+        ]
+    ),
+	(
+    regex: r#"^[0-9a-fA-F]{16}$"#,
+    modes: [
+        (
+            name: "Fletcher-64",
+			hashcat: None,
+        )
+    ]
+	),
+    (
+        regex: r#"^[0-9a-fA-F]{8}$"#,
+        modes: [
+            (
+                name: "Adler-32",
+				hashcat: None,
+            ),
+            (
+                name: "Fletcher-32",
+				hashcat: None,
+            )
+        ]
+    )
+]
